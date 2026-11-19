@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TumbuhSehat — Posyandu Growth Companion</title>
+<meta name="description" content="Phone-first growth monitoring for posyandu volunteers: instant WHO-standard verdicts on every toddler weigh-in, so stunting is caught early.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">🌱</span> TumbuhSehat</div>
+  <div class="topbar-sub" id="posyanduLine">Posyandu companion</div>
+</header>
+
+<main id="app">
+  <!-- DASHBOARD / REGISTER -->
+  <section id="view-register" class="view">
+    <div class="stats" id="statsRow"></div>
+    <div id="attentionBox"></div>
+    <h2 class="section-title">Children under five</h2>
+    <div id="childList" class="child-list"></div>
+    <p class="hint">Tap a child to see growth charts, history and add this month's measurement.</p>
+  </section>
+
+  <!-- CHILD DETAIL -->
+  <section id="view-child" class="view hidden">
+    <button class="back-btn" id="backBtn">← All children</button>
+    <div id="childDetail"></div>
+  </section>
+
+  <!-- POSYANDU DAY -->
+  <section id="view-day" class="view hidden">
+    <h2 class="section-title">Posyandu day</h2>
+    <div id="dayContent"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="view-about" class="view hidden">
+    <h2 class="section-title">About TumbuhSehat</h2>
+    <div class="card">
+      <p><strong>The problem.</strong> About 1 in 5 Indonesian children under five is stunted — a preventable condition that quietly damages growth and learning if it is not caught in the first years of life. The front line is the <em>posyandu</em>, a village health post run by volunteer cadres who weigh and measure toddlers every month and plot the results on paper cards by hand.</p>
+      <p><strong>What this app does.</strong> TumbuhSehat turns each weigh-in into an instant verdict. Enter weight and height and it computes weight-for-age and height-for-age <strong>z-scores against WHO Child Growth Standards</strong>, shows the child on a growth chart against the −2 SD and −3 SD lines, explains the result in plain language, and says what to do next — routine monitoring, extra protein and a recheck, or referral to the <em>puskesmas</em> (community clinic). It also builds the cadre's monthly report in one tap, ready to paste into WhatsApp — the way cadres already report today.</p>
+      <p><strong>Private by design.</strong> There is no account and no server. Children's data never leaves this phone (it is stored only in this browser), because health data is sensitive personal data under Indonesia's PDP Law No. 27 of 2022 — and because village connections are unreliable. The app works offline once loaded.</p>
+      <p><strong>Honest limits.</strong> The growth reference is a simplified WHO Child Growth Standards table (median and SD anchors at key ages, interpolated). TumbuhSehat is a screening companion for trained volunteers — <strong>not a medical device</strong> — and does not replace official KMS/WHO Anthro calculations or a health worker's judgement. The register shown is fictional sample data from a village in Brebes, Central Java.</p>
+      <p><strong>Built for GenHacks 2026</strong> (Healthcare &amp; Environmental track) by a solo student developer from Indonesia. Plain HTML, CSS and JavaScript — no build step, no backend, no trackers.</p>
+      <button class="btn btn-ghost" id="resetBtn">Reset demo data</button>
+    </div>
+  </section>
+</main>
+
+<nav class="tabbar">
+  <button class="tab active" data-view="register">👶<span>Register</span></button>
+  <button class="tab" data-view="day">📋<span>Posyandu day</span></button>
+  <button class="tab" data-view="about">ℹ️<span>About</span></button>
+</nav>
+
+<script src="js/engine.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
